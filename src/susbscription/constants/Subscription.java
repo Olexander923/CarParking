@@ -10,18 +10,13 @@ public class Subscription {
     private Period subcriptionPeriod;
     private String creditCardNumber;
     private String phoneNumber;
-    private String eMail;
-    //добавить поле "квитанция об оплате"
-
 
     public Subscription(String creditCardNumber, String phoneNumber, SubscriptionDuration duration) {
         this.startDate = LocalDate.now();// установка текущей даты как начало подписки
         this.subcriptionPeriod = Period.ofMonths(duration.getMonths());// установка периода подписки
         this.creditCardNumber = creditCardNumber;
         this.phoneNumber = phoneNumber;
-        this.eMail = eMail;
     }
-
 
     public LocalDate getEndDate() { //получение даты окончания подписки
         return startDate.plus(subcriptionPeriod);}
@@ -51,5 +46,5 @@ public class Subscription {
             System.out.println("Error: check the card number or phone number are correct" );
         }
     }
-    //отправить квитанцию об оплате на почту
+
 }

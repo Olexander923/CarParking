@@ -9,7 +9,7 @@ public class Support {
     private Date resolutionDate;
     private String comments;// комменты от поддержки
     private String supTelNumber;
-    private String eMail;
+    private String email;
 
     public Support(String ticketID, String userID, String problemScript, String status, Date creationDate, String comments, Date resolutionDate, String supTelNumber, String eMail) {
         this.ticketID = ticketID;
@@ -19,7 +19,7 @@ public class Support {
         this.creationDate = new Date();
         this.resolutionDate = resolutionDate;
         this.supTelNumber = supTelNumber;
-        this.eMail = eMail;
+        this.email = email;
         this.comments = "";
     }
 
@@ -43,29 +43,29 @@ public class Support {
 
     public Date getResolutionDate() {return resolutionDate;}
     public void callSupport() {
-        System.out.println("Позвоните в поддержку по номеру: " + supTelNumber);}
+        System.out.println("Call to support by number: " + supTelNumber);}
     public void sendEmail(String message) {
-        System.out.println("Если остались еще вопросы, напишите на email: " + eMail + "\nСообщение" + message);
+        System.out.println("If you still have questions, write on email: " + email + "\nMessage" + message);
     }
 
     public String getComments() {return comments;}
     public void addComments() {this.comments+=comments+ "\n";}
     public void closeTicket() {
-        this.status = "закрыт";
+        this.status = "closed";
         this.resolutionDate = new Date();
     }
 
         public String displayTicketInfo() {
         return "Support{" +
-                "Запрос ID'" + ticketID + '\'' +
-                "Пользователь ID: " + userID + '\'' +
-                ", Описание проблемы='" + problemScript + '\'' +
-                ", Статус='" + status + '\'' +
-                ", Дата создания=" + creationDate +
-                ", Дата разрешения=" + (resolutionDate !=null ? resolutionDate: "еще не решен") +
-                ", Комментарии='" + comments + '\'' +
-                ", Тел. поддержки='" + supTelNumber + '\'' +
-                ", eMail='" + eMail + '\'' +
+                "Request ID'" + ticketID + '\'' +
+                "User ID: " + userID + '\'' +
+                ", Problem description='" + problemScript + '\'' +
+                ", Status='" + status + '\'' +
+                ", Date of creation=" + creationDate +
+                ", Date of authorization=" + (resolutionDate !=null ? resolutionDate: "not resolved yet") +
+                ", Comments='" + comments + '\'' +
+                ", Support tel.number='" + supTelNumber + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

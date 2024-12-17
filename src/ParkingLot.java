@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class ParkingLot {
     String ParkingID;
     List<List<Slot>> slots;
